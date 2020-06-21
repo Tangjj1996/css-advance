@@ -3,9 +3,9 @@
 ## Usage
 
 ```
-// production environment
+// development evironment
 npm start
 
-// development evironment
-npm run dev
+// production environment
+npm build
 ```
