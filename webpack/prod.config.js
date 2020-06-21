@@ -9,6 +9,7 @@ module.exports = merge(baseCfg, {
       chunks: 'all',
       cacheGroups: {
         ventor: {
+          name: 'vue-common',
           test: /\.vue/,
           chunks: 'initial',
         },

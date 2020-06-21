@@ -8,7 +8,7 @@ const ROOT_DIR = resolve(__dirname, '../').replace(/\\/g, '/')
 
 const buildFiles = {}
 const buildHtml = []
-const buildList = glob.sync(ROOT_DIR + '/!(node_modules|webpack)/index.js')
+const buildList = glob.sync(ROOT_DIR + '/!(node_modules|webpack|build)/index.js')
 
 buildList.forEach(item => {
   const keyName = item.replace(ROOT_DIR, '').replace('index.js', '').replace(/\//g, '')
