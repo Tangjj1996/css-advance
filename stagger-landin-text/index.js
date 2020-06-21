@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './src/App'
 
-import './wave.scss'
+import './index.scss'
 
 new Vue({
   el: '#root',

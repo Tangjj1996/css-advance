@@ -2,6 +2,7 @@ const { resolve } = require('path')
 const glob = require('glob')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const ROOT_DIR = resolve(__dirname, '../').replace(/\\/g, '/')
 
@@ -14,9 +15,10 @@ buildList.forEach(item => {
   buildFiles[keyName] = item
   buildHtml.push(new HtmlWebpackPlugin(
     {
-      template: resolve(__dirname, `../${keyName}/index.html`),
+      template: resolve(__dirname, `../index.html`),
       filename: `${keyName}.html`,
-      chunks: keyName
+      title: keyName,
+      chunks: [keyName]
     }
   ))
 })
@@ -28,8 +30,20 @@ module.exports = {
     chunkFilename: '[id].[chunkhash:6].bundle.js',
     path: resolve(__dirname, '../build')
   },
+  resolve: {
+    extensions: ['.vue', '.js']
+  },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.js&/,
+        loader: 'babel-loader',
+        exclude: file => file.test(/node_modules/g) && !file.test(/\.vue$/)
+      },
       {
         test: /\.s(a|c)ss$/,
         use: [
@@ -49,6 +63,7 @@ module.exports = {
   },
   plugins: [
     ...buildHtml,
+    new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:6].css'
     })
