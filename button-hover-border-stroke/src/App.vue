@@ -1,0 +1,18 @@
+<template>
+  <button data-text="Start" class="btn btn-primary btn-ghost btn-border-stroke btn-text-float-up">
+    <div class="btn-borders">
+      <div class="border-top"></div>
+      <div class="border-right"></div>
+      <div class="border-bottom"></div>
+      <div class="border-left"></div>
+    </div>
+    <span class="btn-text">Start</span>
+  </button>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style>
+</style>
