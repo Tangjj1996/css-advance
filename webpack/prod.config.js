@@ -10,12 +10,13 @@ module.exports = merge(baseCfg, {
       cacheGroups: {
         ventor: {
           name: 'vue-common',
-          test: /\.vue/,
+          filename: 'vue-common.js',
+          test: /node_modules/,
           chunks: 'initial',
         },
         common: {
           minChunks: 5,
-          reuseExistingChunk: true  
+          reuseExistingChunk: true
         }
       }
     }

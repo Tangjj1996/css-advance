@@ -7,7 +7,7 @@
       <div class="border-left"></div>
     </div>
     <div class="card-content">
-      <img src="https://i.loli.net/2020/01/12/xhQRgqyB4Oov3S8.jpg" class="avatar" />
+      <img src='./xhQRgqyB4Oov3S8.webp' class="avatar" />
       <div class="username">alphardex</div>
       <div class="social-icons">
         <a class="social-icon" href="https://codepen.io/alphardex" target="_blank">

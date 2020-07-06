@@ -2,6 +2,7 @@ const { resolve } = require('path')
 const glob = require('glob')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const WebpackManifestPlugin = require('webpack-manifest-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const ROOT_DIR = resolve(__dirname, '../').replace(/\\/g, '/')
@@ -58,14 +59,31 @@ module.exports = {
           'postcss-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg|webp)/,
+        loader: 'url-loader',
+        options: {
+          limit: 10240,
+          esModule: false,
+          fallback: {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/[path][name]_[hash:6].[ext]'
+            }
+          }
+        }
       }
     ]
   },
   plugins: [
     ...buildHtml,
     new VueLoaderPlugin(),
+    new WebpackManifestPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:6].css'
+      filename: 'css/[name].[contenthash:6].css',
+      chunkFilename: 'css/[id].[contenthash:6].css',
+      ignoreOrder: true
     })
   ]
 }
