@@ -10,8 +10,8 @@ export default {
   methods: {
     initialize() {
       const delay = 0.3
-      const revealText = this.$refs['revealRef']
-      const letters = revealText.textContent.split("")
+      const revealText = this.$refs.revealRef
+      const letters = revealText.textContent.split('')
       revealText.textContent = ''
       const middle = letters.filter(e => e !== ' ').length / 2
       letters.forEach((letter, index) => {
@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .reveal {
   position: relative;
   display: flex;

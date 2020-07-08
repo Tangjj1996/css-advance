@@ -9,22 +9,20 @@ export default {
   },
   methods: {
     initialEle() {
-      const landInTexts = document.querySelectorAll(".landIn");
+      const landInTexts = document.querySelectorAll('.landIn')
       landInTexts.forEach(landInText => {
-        let letters = landInText.textContent.split("");
-        landInText.textContent = "";
+        const letters = landInText.textContent.split('')
+        landInText.textContent = ''
         letters.forEach((letter, i) => {
-        let span = document.createElement("span");
-        span.textContent = letter;
-        span.style.animationDelay = `${i * 0.05}s`;
-        landInText.append(span);
-        });
+          const span = document.createElement('span')
+          span.textContent = letter
+          span.style.animationDelay = `${i * 0.05}s`
+          landInText.append(span)
+        })
       })
     }
   }
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

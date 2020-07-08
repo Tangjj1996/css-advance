@@ -14,14 +14,14 @@ const buildList = glob.sync(ROOT_DIR + '/!(node_modules|webpack|build)/index.js'
 buildList.forEach(item => {
   const keyName = item.replace(ROOT_DIR, '').replace('index.js', '').replace(/\//g, '')
   buildFiles[keyName] = item
-  buildHtml.push(new HtmlWebpackPlugin(
-    {
+  buildHtml.push(
+    new HtmlWebpackPlugin({
       template: resolve(__dirname, `../index.html`),
       filename: `${keyName}.html`,
       title: keyName,
       chunks: [keyName]
-    }
-  ))
+    })
+  )
 })
 
 module.exports = {

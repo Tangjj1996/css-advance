@@ -12,7 +12,7 @@ module.exports = merge(baseCfg, {
           name: 'vue-common',
           filename: 'vue-common.js',
           test: /node_modules/,
-          chunks: 'initial',
+          chunks: 'initial'
         },
         common: {
           minChunks: 5,
@@ -21,7 +21,5 @@ module.exports = merge(baseCfg, {
       }
     }
   },
-  plugins: [
-    new CleanWebpackPlugin()
-  ]
+  plugins: [new CleanWebpackPlugin()]
 })

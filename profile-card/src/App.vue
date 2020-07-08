@@ -7,7 +7,7 @@
       <div class="border-left"></div>
     </div>
     <div class="card-content">
-      <img src='./xhQRgqyB4Oov3S8.webp' class="avatar" />
+      <img src="./xhQRgqyB4Oov3S8.webp" class="avatar" />
       <div class="username">alphardex</div>
       <div class="social-icons">
         <a class="social-icon" href="https://codepen.io/alphardex" target="_blank">
@@ -70,8 +70,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
-<style>
-</style>
+<style></style>

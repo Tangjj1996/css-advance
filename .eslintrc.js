@@ -3,11 +3,13 @@ module.exports = {
     browser: true,
     es2020: true
   },
-  extends: ['plugin:vue/essential', 'standard', '', ''],
+  extends: ['plugin:vue/essential', 'standard', 'prettier', 'prettier/vue'],
   parserOptions: {
     ecmaVersion: 11,
     sourceType: 'module'
   },
   plugins: ['vue'],
-  rules: {}
+  rules: {
+    'no-new': 0
+  }
 }
