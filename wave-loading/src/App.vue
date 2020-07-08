@@ -10,10 +10,12 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      a: {}
+    }
+  }
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
