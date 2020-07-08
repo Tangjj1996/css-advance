@@ -5,6 +5,5 @@ import './snow.scss'
 
 new Vue({
   el: '#root',
-
   render: h => h(App)
 })
