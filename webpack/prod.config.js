@@ -6,7 +6,6 @@ module.exports = merge(baseCfg, {
   mode: 'production',
   optimization: {
     splitChunks: {
-      chunks: 'all',
       cacheGroups: {
         ventor: {
           name: 'vue-common',
